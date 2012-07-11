@@ -24,6 +24,9 @@ Ugigi Wrapper for Ruby 1.9.x
 	novels.each do |novel|
 		puts novel.title
 	end
+	
+	# "にとり"が文章中に含まれているSSの数を持ってくる
+	puts Ugigi.total_count(:free => "にとり")
 
 ## Contributing
 

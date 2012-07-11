@@ -11,9 +11,10 @@ require "ugigi/parser"
 
 module Ugigi
   BASE_URL = "http://ugigi.dvrdns.org/api/search/list.json"
+  BASE_URL_NOAPI = "http://ugigi.dvrdns.org/search"
   
-  # @param [Hash] parameter
-  # @return [String] URL Serialized parameters
+  protected
+  
   def self.serialize_parameter parameter
     return "" unless parameter.class == Hash
     ant = Hash.new
@@ -24,8 +25,15 @@ module Ugigi
     return param ? param : ""
   end
   
+  public
+  
   def self.search(args={})
     parser = Parser.new
     parser.fetch(args)
+  end
+  
+  def self.total_count(args)
+    parser = Parser.new
+    parser.total_count(args)
   end
 end
