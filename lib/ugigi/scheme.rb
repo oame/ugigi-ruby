@@ -3,10 +3,8 @@ module Ugigi
     attr_accessor :element
     
     def method_missing(action, *args)
-      return @element[action.to_s] rescue nil
+      return @element[action.to_s] || @element[action.to_sym] rescue nil
     end
-    
-    public
     
     def params() @element.keys.map{|k|k.to_sym} ; end
     alias_method :available_methods, :params
@@ -18,23 +16,22 @@ module Ugigi
     end
     
     def to_sosowa_index
-      log = link.scan(/log=(\d+?)/)[0][0].to_i
-      key = link.scan(/key=(\d+?)/)[0][0].to_i
-      pp @element["link"]
+      log = @element["link"].scan(/log=(\d+?)/)[0][0].to_i
+      key = @element["link"].scan(/key=(\d+?)/)[0][0].to_i
       index = {
         :log => log,
         :key => key,
-        :title => title,
-        :author => author,
-        :created_at => posted_at,
-        :updated_at => updated_at,
+        :title => @element["title"],
+        :author => @element["author"],
+        :created_at => @element["posted_at"],
+        :updated_at => @element["updated_at"],
         :review_count => nil,
-        :comment_count => comment,
-        :point => point,
-        :tags => tags,
+        :comment_count => @element["comment"],
+        :point => @element["point"],
+        :tags => @element["tags"],
         :rate => @element["eval"],
-        :size => size,
-        :url => link
+        :size => @element["size"],
+        :url => @element["link"]
       }
     end
   end
