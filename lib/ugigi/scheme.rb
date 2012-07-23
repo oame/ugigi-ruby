@@ -1,6 +1,6 @@
 module Ugigi
   class Scheme
-    protected
+    attr_accessor :element
     
     def method_missing(action, *args)
       return @element[action.to_s] rescue nil
