@@ -16,8 +16,8 @@ module Ugigi
     end
     
     def to_sosowa_index
-      log = @element["link"].scan(/log=(\d+?)/)[0][0].to_i
-      key = @element["link"].scan(/key=(\d+?)/)[0][0].to_i
+      log = @element["link"].scan(/log=(\d+)/)[0][0].to_i
+      key = @element["link"].scan(/key=(\d+)/)[0][0].to_i
       index = {
         "log" => log,
         "key" => key,
