@@ -84,12 +84,12 @@ module Ugigi
     return data
   end
 
-  def seld.mylist_remove(args={})
+  def self.mylist_remove(args={})
     data = send_req("list/rem", args)
     return data
   end
 
-  def seld.mylist_edit(args={})
+  def self.mylist_edit(args={})
     data = send_req("list/edit", args)
     return data
   end

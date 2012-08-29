@@ -17,6 +17,10 @@ describe Ugigi, "が #search を呼ぶ時は" do
       i.class.should == Ugigi::Index
     end
   end
+
+  it "配列の最初のIndexのtitleがStringであること" do
+    @free_search_result.first.title.class.should == String
+  end
 end
 
 describe Ugigi, "が #total_count を呼ぶ時は" do
