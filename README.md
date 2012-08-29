@@ -1,10 +1,10 @@
 # Ugigi
 
-Ugigi Wrapper for Ruby 1.9.x
+Ugigi Wrapper for Ruby
 
 ## Requirements
 
-* Ruby 1.9.x
+* Ruby
 
 ## Installation
 
