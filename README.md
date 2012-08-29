@@ -5,7 +5,6 @@ Ugigi Wrapper for Ruby 1.9.x
 ## Requirements
 
 * Ruby 1.9.x
-* mechanize gem
 
 ## Installation
 
