@@ -1,14 +1,16 @@
-# Ugigi
+# ugigi-ruby
 
-Ugigi Wrapper for Ruby
+[![Build Status](https://secure.travis-ci.org/oame/ugigi-ruby.png?branch=master)](http://travis-ci.org/oame/ugigi-ruby)
 
-## Requirements
+うぎぎ検索 for Ruby
 
-* Ruby
+## 動作環境
 
-## Installation
+* Ruby 1.8.x - 1.9.x
 
-	gem install ugigi
+## インストール
+
+	$ gem install ugigi
 
 ## Usage
 
