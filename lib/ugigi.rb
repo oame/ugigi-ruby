@@ -64,6 +64,15 @@ module Ugigi
   end
 
   def self.mylist(args={})
+    case args[:only]
+    when :sosowa
+      args = args.update(:sswp => 0, :compe => 0)
+    when :compe
+      args = args.update(:sswl => 0, :sswp => 0)
+    when :sswp
+      args = args.update(:sswl => 0, :compe => 0)
+    end
+    args.delete(:only) if args.has_key? :only
     data = send_req("list/get", args)
     indexes = []
     data.each do |e|
