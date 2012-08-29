@@ -28,6 +28,9 @@ Ugigi Wrapper for Ruby 1.9.x
 	# "にとり"が文章中に含まれているSSの数を持ってくる
 	puts Ugigi.total_count(:free => "にとり")
 
+	# 東方創想話に限定して検索
+	puts Ugigi.search(:title => "霊夢", :only => :sosowa)
+
 ## Contributing
 
 1. Fork it

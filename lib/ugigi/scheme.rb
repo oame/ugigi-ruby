@@ -1,6 +1,10 @@
 module Ugigi
   class Scheme
     attr_accessor :element
+
+    def initialize(element)
+      @element = element
+    end
     
     def method_missing(action, *args)
       return @element[action.to_s] rescue nil
@@ -10,11 +14,7 @@ module Ugigi
     alias_method :available_methods, :params
   end
   
-  class Index < Scheme
-    def initialize(element)
-      @element = element
-    end
-    
+  class Index < Scheme    
     def to_sosowa_index
       log = @element["link"].scan(/log=(\d+)/)[0][0].to_i
       key = @element["link"].scan(/key=(\d+)/)[0][0].to_i

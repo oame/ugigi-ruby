@@ -14,5 +14,4 @@ Gem::Specification.new do |gem|
   gem.name          = "ugigi"
   gem.require_paths = ["lib"]
   gem.version       = Ugigi::VERSION
-  gem.add_dependency "mechanize"
 end
